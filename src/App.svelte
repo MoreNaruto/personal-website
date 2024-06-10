@@ -1,18 +1,30 @@
 <script>
-	export let name;
+	import { Router, Route } from 'svelte-routing';
+	import Home from './routes/Home.svelte';
+	import Career from './routes/Career.svelte';
+	import BookReviews from './routes/BookReviews.svelte';
+	import Contact from './routes/Contact.svelte';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
+<Router>
+	<Route path="/" component={Home} />
+	<Route path="career" component={Career} />
+	<Route path="book-reviews" component={BookReviews} />
+	<Route path="contact" component={Contact} />
+</Router>
 
 <style>
+	:global(body) {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #494D5F;
+	}
+
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+		max-width: 800px;
+		margin: auto;
+		padding: 2rem;
 	}
 
 	h1 {
