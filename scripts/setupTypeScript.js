@@ -5,7 +5,7 @@
   <script lang="ts">
   	export let name: string;
   </script>
- 
+
   As well as validating the code for CI.
   */
 
@@ -41,8 +41,8 @@ packageJSON.scripts = Object.assign(packageJSON.scripts, {
 // Write the package JSON
 fs.writeFileSync(path.join(projectRoot, "package.json"), JSON.stringify(packageJSON, null, "  "))
 
-// mv src/main.js to main.ts - note, we need to edit rollup.config.js for this too
-const beforeMainJSPath = path.join(projectRoot, "src", "main.js")
+// mv src/main.ts to main.ts - note, we need to edit rollup.config.js for this too
+const beforeMainJSPath = path.join(projectRoot, "src", "main.ts")
 const afterMainTSPath = path.join(projectRoot, "src", "main.ts")
 fs.renameSync(beforeMainJSPath, afterMainTSPath)
 
