@@ -8,6 +8,7 @@ const { terser } = require('rollup-plugin-terser');
 const sveltePreprocess = require('svelte-preprocess');
 const path = require('path');
 const md = require('rollup-plugin-md');
+const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 
 const production = !process.env.ROLLUP_WATCH;
@@ -27,7 +28,14 @@ module.exports = {
                 dev: !production
             }
         }),
-        css({ output: 'bundle.css' }),
+        postcss({
+            plugins: [
+                autoprefixer(),
+            ],
+            extract: 'bundle.css',  // Ensure correct output path for CSS
+            sourceMap: true,
+            minimize: production
+        }),
         resolve({
             browser: true,
             dedupe: ['svelte']
