@@ -3,10 +3,10 @@ const commonjs = require('@rollup/plugin-commonjs');
 const resolve = require('@rollup/plugin-node-resolve').default;
 const json = require('@rollup/plugin-json');
 const typescript = require('@rollup/plugin-typescript');
+const css = require('rollup-plugin-css-only')
 const { terser } = require('rollup-plugin-terser');
 const sveltePreprocess = require('svelte-preprocess');
 const path = require('path');
-const postcss = require('rollup-plugin-postcss');
 const md = require('rollup-plugin-md');
 const autoprefixer = require('autoprefixer');
 
@@ -22,19 +22,12 @@ module.exports = {
     },
     plugins: [
         svelte({
-            preprocess: sveltePreprocess(),
+            preprocess: sveltePreprocess({sourceMap: !production, postcss: true}),
             compilerOptions: {
                 dev: !production
             }
         }),
-        postcss({
-            plugins: [
-                autoprefixer(),
-            ],
-            extract: 'public/build/bundle.css',  // Ensure correct output path for CSS
-            sourceMap: true,
-            minimize: production
-        }),
+        css({ output: 'bundle.css' }),
         resolve({
             browser: true,
             dedupe: ['svelte']
@@ -44,7 +37,8 @@ module.exports = {
         md(),
         typescript({
             sourceMap: !production,
-            inlineSources: !production
+            inlineSources: !production,
+            tsconfig: './tsconfig.json'
         }),
         !production && serve(),
         production && terser()

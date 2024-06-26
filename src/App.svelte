@@ -8,5 +8,10 @@
 </Router>
 
 <style>
-    @import 'global.css';
+    :global(body) {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #494D5F;
+    }
 </style>
