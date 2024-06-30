@@ -4,7 +4,7 @@
     import Career from "../components/Career.svelte";
     import BookReviews from "../components/BookReviews.svelte";
     import Contact from "../components/Contact.svelte";
-    import Skills from "../components/Skills.svelte";
+    import Skills from "../components/skills/SkillsSet.svelte";
     import RandomWord from "../components/RandomWord.svelte";
     import {fade} from 'svelte/transition';
 
