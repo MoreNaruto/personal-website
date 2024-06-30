@@ -59,24 +59,30 @@
 
 <div class="scene w-[32vw] h-[32vw] mx-auto mt-24" on:mousedown={onMouseDown}>
     <div class="dice w-full h-full relative" bind:this={dice}>
-        <div class="face front absolute w-[32vw] h-[32vw] bg-red-200 border items-center justify-center text-center text-[2vw] font-bold"
+        <div class="face front absolute w-[32vw] h-[32vw] bg-red-200 border items-center justify-center text-center text-[3vw] font-bold"
              style="transform: translateZ(calc(32vw / 2));">
-            <p class="mb-4">This is a description. Click the button to learn more!</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("about-me")}>About Me</button>
+            <p class="mb-10">Who am I?</p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("about-me")}>
+                Click Me
+            </button>
         </div>
-        <div class="face back absolute w-[32vw] h-[32vw] bg-amber-200 border flex items-center justify-center text-[4vw] font-bold"
-             style="transform: rotateY(180deg) translateZ(calc(32vw / 2));">6
+        <div class="face back absolute w-[32vw] h-[32vw] bg-amber-200 border items-center justify-center text-center text-[3vw] font-bold"
+             style="transform: rotateY(180deg) translateZ(calc(32vw / 2));">
+            <p class="mb-10">Look at what I can do!</p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("skills")}>
+                Click Me
+            </button>
         </div>
-        <div class="face left absolute w-[32vw] h-[32vw] bg-lime-200 border flex items-center justify-center text-[4vw] font-bold"
+        <div class="face left absolute w-[32vw] h-[32vw] bg-lime-200 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateY(-90deg) translateZ(calc(32vw / 2));">3
         </div>
-        <div class="face right absolute w-[32vw] h-[32vw] bg-teal-200 border flex items-center justify-center text-[4vw] font-bold"
+        <div class="face right absolute w-[32vw] h-[32vw] bg-teal-200 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateY(90deg) translateZ(calc(32vw / 2));">4
         </div>
-        <div class="face top absolute w-[32vw] h-[32vw] bg-indigo-200 border flex items-center justify-center text-[4vw] font-bold"
+        <div class="face top absolute w-[32vw] h-[32vw] bg-indigo-200 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateX(90deg) translateZ(calc(32vw / 2));">5
         </div>
-        <div class="face bottom absolute w-[32vw] h-[32vw] bg-yellow-400 border flex items-center justify-center text-[4vw] font-bold"
+        <div class="face bottom absolute w-[32vw] h-[32vw] bg-yellow-400 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateX(-90deg) translateZ(calc(32vw / 2));">2
         </div>
     </div>

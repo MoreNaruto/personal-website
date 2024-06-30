@@ -21,7 +21,8 @@
     ]);
 
     function handleModalOpenClick(event) {
-        currentModalPage = pageComponentMap.get(event.detail.page);
+        const pageName = event.detail.page;
+        currentModalPage = pageComponentMap.get(pageName) || AboutMe;
         showModal = true;
     }
 
@@ -31,7 +32,7 @@
 </script>
 
 <main class="flex flex-col items-center justify-center h-screen w-screen">
-    <h1 class="mb-5 text-3xl font-bold text-white">Pick a side</h1>
+    <h1 class="mb-5 text-3xl font-bold text-white">Built with Svelte</h1>
     <Dice on:modalOpenClick={handleModalOpenClick}/>
     {#if showModal}
         <div class="fixed inset-0 w-screen h-screen bg-black bg-opacity-70 flex justify-center items-center z-50"

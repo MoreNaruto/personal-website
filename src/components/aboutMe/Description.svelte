@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Description from '../../markdowns/description.md';
+    import Description from '../../markdowns/introduction.md';
 </script>
 
 <div class="prose prose-lg">
