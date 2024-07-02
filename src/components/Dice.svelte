@@ -80,8 +80,12 @@
                 Click Me
             </button>
         </div>
-        <div class="face right absolute w-[32vw] h-[32vw] bg-teal-200 border flex items-center justify-center text-center text-[3vw] font-bold"
-             style="transform: rotateY(90deg) translateZ(calc(32vw / 2));">4
+        <div class="face right absolute w-[32vw] h-[32vw] bg-teal-200 border items-center justify-center text-center text-[3vw] font-bold"
+             style="transform: rotateY(90deg) translateZ(calc(32vw / 2));">
+            <p class="mb-10">Learn a new word!</p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("random-word")}>
+                Click Me
+            </button>
         </div>
         <div class="face top absolute w-[32vw] h-[32vw] bg-indigo-200 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateX(90deg) translateZ(calc(32vw / 2));">5

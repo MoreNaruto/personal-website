@@ -10,6 +10,7 @@ const path = require('path');
 const md = require('rollup-plugin-md');
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
+const glob = require('rollup-plugin-glob');
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -43,6 +44,10 @@ module.exports = {
         commonjs(),
         json(),
         md(),
+        glob({
+            name: '**/*.md',
+            base: './src/',
+        }),
         typescript({
             sourceMap: !production,
             inlineSources: !production,

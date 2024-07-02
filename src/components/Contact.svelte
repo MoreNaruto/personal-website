@@ -1,7 +1,7 @@
 <script>
     import {marked} from 'marked';
 
-    import ContactMe from "../markdowns/contactme.md";
+    import ContactMe from "../markdowns/contactMe/contactme.md";
 
     const page = marked(ContactMe);
 </script>

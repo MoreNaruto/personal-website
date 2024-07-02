@@ -1,9 +1,9 @@
 <script>
     import {onMount} from 'svelte';
     import {marked} from 'marked';
-    import FamilyPhoto from "../../markdowns/family-photo.md";
-    import Introduction from "../../markdowns/introduction.md";
-    import Interests from "../../markdowns/interests.md";
+    import FamilyPhoto from "../../markdowns/aboutMe/family-photo.md";
+    import Introduction from "../../markdowns/aboutMe/introduction.md";
+    import Interests from "../../markdowns/aboutMe/interests.md";
 
     let currentPage = 0;
 
