@@ -73,8 +73,12 @@
                 Click Me
             </button>
         </div>
-        <div class="face left absolute w-[32vw] h-[32vw] bg-lime-200 border flex items-center justify-center text-center text-[3vw] font-bold"
-             style="transform: rotateY(-90deg) translateZ(calc(32vw / 2));">3
+        <div class="face left absolute w-[32vw] h-[32vw] bg-lime-200 border items-center justify-center text-center text-[3vw] font-bold"
+             style="transform: rotateY(-90deg) translateZ(calc(32vw / 2));">
+            <p class="mb-10">Want to chat?</p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("contact")}>
+                Click Me
+            </button>
         </div>
         <div class="face right absolute w-[32vw] h-[32vw] bg-teal-200 border flex items-center justify-center text-center text-[3vw] font-bold"
              style="transform: rotateY(90deg) translateZ(calc(32vw / 2));">4

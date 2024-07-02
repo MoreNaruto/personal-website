@@ -6,3 +6,9 @@
     width: 25%;
     margin: 0 auto;
 }
+
+.contact-page p {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}

@@ -6,9 +6,12 @@
     const skillsData = {
         frontend: [
             { name: 'ReactJS', level: 90 },
+            { name: 'Typescript', level: 85 },
             { name: 'Javascript', level: 85 },
             { name: 'HTML/CSS', level: 85 },
-            { name: 'NodeJS', level: 75 },
+            { name: 'Tailwind', level: 80 },
+            { name: 'Yarn/NPM', level: 75 },
+            { name: 'NodeJS', level: 70 },
             { name: 'Svelte', level: 60 },
             { name: 'NextJS', level: 50 },
             { name: 'ReactNative', level: 45 },
@@ -28,6 +31,7 @@
             { name: 'PHP/Laravel', level: 40 },
             { name: 'Ruby/Rails', level: 30 },
             { name: 'Ruby/Sinatra', level: 25 },
+            { name: 'Python', level: 15 },
         ],
         devOps: [
             { name: 'AWS Services', level: 55 },

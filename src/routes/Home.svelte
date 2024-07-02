@@ -37,7 +37,7 @@
     {#if showModal}
         <div class="fixed inset-0 w-screen h-screen bg-black bg-opacity-70 flex justify-center items-center z-50"
              in:fade out:fade>
-            <div class="relative bg-white p-8 rounded-md max-w-4xl text-center w-screen">
+            <div class="relative bg-white p-8 rounded-md max-w-4xl text-center {currentModalPage === Contact ? '' : 'w-screen'}">
                 <button class="absolute top-2 right-2 bg-transparent border-none text-2xl cursor-pointer"
                         on:click={closeModal}>&times;
                 </button>
