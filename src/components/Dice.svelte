@@ -1,6 +1,6 @@
 <script>
-    import {onMount} from "svelte";
-    import {createEventDispatcher} from 'svelte';
+    import { onMount } from "svelte";
+    import { createEventDispatcher } from 'svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -11,14 +11,39 @@
 
     const onMouseDown = (event) => {
         isDragging = true;
-        startX = event.clientX;
-        startY = event.clientY;
+        startX = getClientX(event);
+        startY = getClientY(event);
+    };
+
+    const onTouchStart = (event) => {
+        const touch = event.touches[0];
+        isDragging = true;
+        startX = getClientX(touch);
+        startY = getClientY(touch);
     };
 
     const onMouseMove = (event) => {
         if (!isDragging) return;
-        currentX = event.clientX;
-        currentY = event.clientY;
+        currentX = getClientX(event);
+        currentY = getClientY(event);
+
+        const deltaX = currentX - startX;
+        const deltaY = currentY - startY;
+
+        rotationY += deltaX * 0.5;
+        rotationX -= deltaY * 0.5;
+
+        dice.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+        startX = currentX;
+        startY = currentY;
+    };
+
+    const onTouchMove = (event) => {
+        if (!isDragging || event.touches.length !== 1) return;
+        const touch = event.touches[0];
+        currentX = getClientX(touch);
+        currentY = getClientY(touch);
 
         const deltaX = currentX - startX;
         const deltaY = currentY - startY;
@@ -36,14 +61,29 @@
         isDragging = false;
     };
 
+    const onTouchEnd = () => {
+        isDragging = false;
+    };
+
     function handleButtonClick(page) {
-        dispatch('modalOpenClick', {page: page});
+        dispatch('modalOpenClick', { page: page });
     }
 
     onMount(() => {
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mouseup', onMouseUp);
+
+        dice.addEventListener('touchmove', onTouchMove);
+        dice.addEventListener('touchend', onTouchEnd);
     });
+
+    function getClientX(event) {
+        return event.clientX || event.touches[0].clientX;
+    }
+
+    function getClientY(event) {
+        return event.clientY || event.touches[0].clientY;
+    }
 </script>
 
 <style>
@@ -57,7 +97,9 @@
     }
 </style>
 
-<div class="scene w-[32vw] h-[32vw] mx-auto mt-24" on:mousedown={onMouseDown}>
+<div class="scene w-[32vw] h-[32vw] mx-auto mt-24"
+     on:mousedown={onMouseDown}
+     on:touchstart={onTouchStart}>
     <div class="dice w-full h-full relative" bind:this={dice}>
         <div class="face front absolute w-[32vw] h-[32vw] bg-red-200 border items-center justify-center text-center text-[3vw] font-bold"
              style="transform: translateZ(calc(32vw / 2));">
