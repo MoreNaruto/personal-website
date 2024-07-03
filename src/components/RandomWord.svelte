@@ -2,11 +2,16 @@
     import {marked} from 'marked';
 
     import randomWords from '../markdowns/randomWords/*.md';
+
+    function getCurrentWord() {
+        let values = Object.values(randomWords);
+        const randomIndex = Math.floor(Math.random() * values.length)
+        return values[randomIndex];
+    }
+
+    const currentWord = getCurrentWord();
 </script>
 
-
-{#each Object.values(randomWords) as randomWord}
-    <article>
-        <div>{@html marked(randomWord)}</div>
-    </article>
-{/each}
+<div class="prose inline-block">
+    {@html marked(currentWord)}
+</div>
