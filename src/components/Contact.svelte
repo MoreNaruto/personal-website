@@ -6,6 +6,6 @@
     const page = marked(ContactMe);
 </script>
 
-<div class="prose contact-page">
+<div class="prose contact-page p-8">
     {@html page}
 </div>

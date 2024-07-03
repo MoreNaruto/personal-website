@@ -35,6 +35,10 @@
             styling: 'bg-improovy text-white'
         },
         {
+            content: Clearstep,
+            styling: 'bg-clearstep text-white'
+        },
+        {
             content: Makalogistics,
             styling: 'bg-makalogistics text-white'
         },

@@ -12,6 +12,6 @@
     const currentWord = getCurrentWord();
 </script>
 
-<div class="prose inline-block">
+<div class="prose inline-block py-8">
     {@html marked(currentWord)}
 </div>
