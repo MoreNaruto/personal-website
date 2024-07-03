@@ -12,3 +12,13 @@
     align-items: center;
     gap: 3vw;
 }
+
+.job h1,
+.job h2,
+.job h3,
+.job h4,
+.job h5,
+.job h6,
+.job em {
+    color: white;
+}

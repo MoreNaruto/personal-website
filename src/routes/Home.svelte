@@ -35,9 +35,12 @@
     <h1 class="mb-5 text-3xl font-bold text-white">Built with Svelte</h1>
     <Dice on:modalOpenClick={handleModalOpenClick}/>
     {#if showModal}
-        <div class="fixed inset-0 w-screen h-screen bg-black bg-opacity-70 flex justify-center items-center z-50"
+        <div class="fixed inset-0 h-screen bg-black bg-opacity-70 flex justify-center items-center z-50"
              in:fade out:fade>
-            <div class="relative bg-white p-8 rounded-md max-w-4xl text-center {currentModalPage === Contact ? '' : 'w-screen'}">
+            <div class="relative bg-white rounded-md overflow-hidden max-h-screen
+                    {currentModalPage === Contact ||  currentModalPage === Career ? '' : 'w-screen'}
+                    {currentModalPage === Career ? '' : 'text-center max-w-4xl'}
+">
                 <button class="absolute top-2 right-2 bg-transparent border-none text-2xl cursor-pointer"
                         on:click={closeModal}>&times;
                 </button>
