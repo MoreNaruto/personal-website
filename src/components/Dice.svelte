@@ -1,6 +1,6 @@
 <script>
-    import { onMount } from "svelte";
-    import { createEventDispatcher } from 'svelte';
+    import {onMount} from "svelte";
+    import {createEventDispatcher} from 'svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -66,7 +66,7 @@
     };
 
     function handleButtonClick(page) {
-        dispatch('modalOpenClick', { page: page });
+        dispatch('modalOpenClick', {page: page});
     }
 
     onMount(() => {
@@ -137,7 +137,11 @@
             </button>
         </div>
         <div class="face bottom absolute w-[32vw] h-[32vw] bg-yellow-400 border flex items-center justify-center text-center text-[3vw] font-bold"
-             style="transform: rotateX(-90deg) translateZ(calc(32vw / 2));">2
+             style="transform: rotateX(-90deg) translateZ(calc(32vw / 2));">
+            <p class="mb-10">Book Reviews!</p>
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("book-reviews")}>
+                Click Me
+            </button>
         </div>
     </div>
 </div>
