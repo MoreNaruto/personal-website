@@ -163,7 +163,7 @@
     }
 </script>
 
-<main class="p-4 bg-slate-200 {selectedBookIndex === null ? 'min-h-[80vw]' : ''}">
+<main class="p-4 bg-slate-200">
     {#if selectedBookIndex === null}
         <h1 class="text-center">My Personal Reviews</h1>
         <div class="mb-4">
