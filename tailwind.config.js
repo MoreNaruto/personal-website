@@ -14,6 +14,9 @@ module.exports = {
         'improovy': '#01BBF6',
         'makalogistics': '#25334B',
         'discover': '#E47619'
+      },
+      minHeight: {
+        'full-available': '-webkit-fill-available',
       }
     },
   },
