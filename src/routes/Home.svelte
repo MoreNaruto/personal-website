@@ -39,7 +39,7 @@
              in:fade out:fade>
             <div class="relative bg-white rounded-md max-h-screen
                     {currentModalPage === Contact ||  currentModalPage === Career ? '' : 'w-screen'}
-                    {currentModalPage === Career ? '' : 'text-center max-w-4xl'}
+                    {currentModalPage === Career ?  '' : 'text-center max-w-4xl'}
                     {currentModalPage === BookReviews ? 'overflow-auto' : 'overflow-hidden'}
 ">
                 <button class="absolute top-2 right-2 bg-transparent border-none text-2xl cursor-pointer"

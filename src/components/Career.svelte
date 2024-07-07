@@ -70,17 +70,26 @@
     }
 </style>
 
-<div class="h-full flex flex-col justify-between">
-    <div class="markdown-content prose job p-4 {jobs[currentPage].styling} max-w-5xl overflow-y-auto max-h-[80vh]">
-        {@html marked(jobs[currentPage].content)}
-    </div>
+<div class="h-full flex flex-col items-center">
+    <div class="w-full max-w-5xl flex flex-col justify-between h-full">
+        <div class="markdown-content prose job p-4 {jobs[currentPage].styling} overflow-y-auto max-h-[80vh]">
+            {@html marked(jobs[currentPage].content)}
+        </div>
 
-    <div class="flex justify-between pt-4 {jobs[currentPage].styling}">
-        <button on:click={previousPage} class="bg-gray-200 text-gray-800 px-4 py-2 rounded" disabled={currentPage === 0}>
-            Previous
-        </button>
-        <button on:click={nextPage} class="bg-gray-200 text-gray-800 px-4 py-2 rounded" disabled={currentPage === jobs.length - 1}>
-            Next
-        </button>
+        <div class="sticky bottom-0 left-0 right-0 flex justify-between p-4 {jobs[currentPage].styling}">
+            <button
+                    on:click={previousPage}
+                    class="px-4 py-2 rounded {currentPage === 0 ? 'bg-gray-200 text-gray-800' : 'bg-blue-500 text-white'}"
+                    disabled={currentPage === 0}>
+                Previous
+            </button>
+            <button
+                    on:click={nextPage}
+                    class="px-4 py-2 rounded {currentPage === jobs.length - 1 ? 'bg-gray-200 text-gray-800' : 'bg-blue-500 text-white'}"
+                    disabled={currentPage === jobs.length - 1}>
+                Next
+            </button>
+        </div>
     </div>
 </div>
+

@@ -102,49 +102,37 @@
     }
 </script>
 
-<main class="p-4 bg-slate-200">
+<main class="p-4 bg-slate-200 pb-16">
     {#if selectedBookIndex === null}
-        <div class="flex justify-between mb-4">
-            <button
-                    on:click={handlePreviousPage}
-                    disabled={currentPage === 1}
-                    class="p-2 rounded transition-colors duration-200 {currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
-            >
-                Previous
-            </button>
-            <button
-                    on:click={handleNextPage}
-                    disabled={currentPage === Math.ceil(books.length / booksPerPage)}
-                    class="p-2 rounded transition-colors duration-200 {currentPage === Math.ceil(books.length / booksPerPage) ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
-            >
-                Next
-            </button>
-        </div>
-        <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center" in:fade>
-            {#each paginatedBooks as { title, author, image }, index}
-                <div class="border border-gray-300 rounded-lg p-4 cursor-pointer text-center min-h-full-available transform transition-transform duration-200 hover:scale-105 w-40" on:click={() => handleBookClick(index)}>
-                    <div class="w-full h-full flex justify-center items-center">
-                        <img src={image} alt={title} class="w-40 h-40 object-cover rounded-lg"/>
-                    </div>
-                    <h3 class="mt-2 text-lg font-bold">"{title}" By {author}</h3>
+        <div class="mb-4">
+            <div class="relative max-w-4xl mx-auto">
+                <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center" in:fade>
+                    {#each paginatedBooks as { title, author, image }, index}
+                        <div class="border border-gray-300 rounded-lg p-4 cursor-pointer text-center min-h-full-available transform transition-transform duration-200 hover:scale-105 w-40" on:click={() => handleBookClick(index)}>
+                            <div class="w-full h-full flex justify-center items-center">
+                                <img src={image} alt={title} class="w-40 h-40 object-cover rounded-lg"/>
+                            </div>
+                            <h3 class="mt-2 text-lg font-bold">"{title}" By {author}</h3>
+                        </div>
+                    {/each}
                 </div>
-            {/each}
-        </div>
-        <div class="flex justify-between mt-4">
-            <button
-                    on:click={handlePreviousPage}
-                    disabled={currentPage === 1}
-                    class="p-2 rounded transition-colors duration-200 {currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
-            >
-                Previous
-            </button>
-            <button
-                    on:click={handleNextPage}
-                    disabled={currentPage === Math.ceil(books.length / booksPerPage)}
-                    class="p-2 rounded transition-colors duration-200 {currentPage === Math.ceil(books.length / booksPerPage) ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
-            >
-                Next
-            </button>
+                <div class="fixed bottom-0 left-0 right-0 mx-auto max-w-4xl flex justify-between p-4 bg-slate-200">
+                    <button
+                            on:click={handlePreviousPage}
+                            disabled={currentPage === 1}
+                            class="p-2 rounded transition-colors duration-200 {currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
+                    >
+                        Previous
+                    </button>
+                    <button
+                            on:click={handleNextPage}
+                            disabled={currentPage === Math.ceil(books.length / booksPerPage)}
+                            class="p-2 rounded transition-colors duration-200 {currentPage === Math.ceil(books.length / booksPerPage) ? 'bg-gray-300 text-gray-700' : 'bg-blue-500 text-white hover:bg-blue-700'}"
+                    >
+                        Next
+                    </button>
+                </div>
+            </div>
         </div>
     {:else}
         <div class="markdown-content p-4 max-w-5xl overflow-y-auto max-h-[80vh] text-left" in:slide={{ duration: 300 }} out:slide={{ duration: 300 }}>
@@ -156,6 +144,7 @@
         </div>
     {/if}
 </main>
+
 
 <style>
     .prose h1 {
