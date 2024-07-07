@@ -17,7 +17,12 @@ module.exports = {
       },
       minHeight: {
         'full-available': '-webkit-fill-available',
-      }
+      },
+      screens: {
+        'xs': {'max': '500px'}, // extra small
+        'sm': {'min': '501px', 'max': '900px'}, // small
+        'lg': {'min': '901px'}, // large
+      },
     },
   },
   variants: {
