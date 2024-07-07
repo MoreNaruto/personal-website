@@ -117,7 +117,7 @@
         { title: "The Abandonment of the Jews: America and the Holocaust, 1941-1945", author: "David S. Wyman", image: "https://github.com/MoreNaruto/personal-website/assets/2292947/b083dae0-b57b-41fc-8360-a7aaa00d86f7" },
         { title: "Our Revolution", author: "Bernie Sanders", image: "https://github.com/MoreNaruto/personal-website/assets/2292947/bbc8c48a-f354-4ba6-94fa-be024eefe816" },
         { title: "Managing Humans: Biting and Humorous Tales of Software Engineering Manager", author: "Michael Lopp", image: "https://github.com/MoreNaruto/personal-website/assets/2292947/d141ada3-cf17-4d72-a60d-1cf2b82edb26" },
-    ];
+    ].reverse();
 
     let currentPage = 1;
     const booksPerPage = 16;
@@ -149,7 +149,7 @@
     let selectedBookIndex = null;
 
     async function loadBookContent(index) {
-        let bookFiles = Object.values(bookReviews);
+        let bookFiles = Object.values(bookReviews).reverse();
         bookContent = bookFiles[index + ((currentPage-1) * booksPerPage)];
     }
 
