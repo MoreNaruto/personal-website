@@ -26,19 +26,24 @@
         showModal = true;
     }
 
+    function handleBackdropClick(event) {
+        if (event.target.classList.contains('fixed')) {
+            closeModal();
+        }
+    }
+
     const closeModal = () => {
         showModal = false;
     };
 </script>
 
 <main class="flex flex-col items-center justify-center h-screen w-screen">
-    <h1 class="mb-5 text-3xl font-bold text-white">Built with Svelte</h1>
     <Dice on:modalOpenClick={handleModalOpenClick}/>
     {#if showModal}
         <div class="fixed inset-0 h-screen bg-black bg-opacity-70 flex justify-center items-center z-10"
-             in:fade out:fade>
+             in:fade out:fade on:click={handleBackdropClick}>
             <div class="relative bg-white rounded-md max-h-screen
-                    {currentModalPage === Contact ||  currentModalPage === Career ? '' : 'w-screen'}
+                    {currentModalPage === Contact || currentModalPage === Career ? '' : 'w-screen'}
                     {currentModalPage === Career ?  '' : 'text-center max-w-4xl'}
                     {currentModalPage === BookReviews ? 'overflow-auto' : 'overflow-hidden'}
 ">
@@ -50,3 +55,7 @@
         </div>
     {/if}
 </main>
+
+<footer class="fixed bottom-0 w-full bg-gray-800 text-white text-center p-4">
+    &copy; 2024 Thomas Morris. All rights reserved. IllOptimumHydro LLC. Built in Svelte
+</footer>
