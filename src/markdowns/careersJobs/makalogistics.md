@@ -17,10 +17,9 @@ generate and display their maps for each facility.
 
 ## Summary
 
-In the realm of optimizing ship deliveries, open and effective dialogue with stakeholders was paramount. A crucial step in this process involved articulating the technical blueprint for the platform's implementation, elucidating how it would drive greater efficiency.
+When optimizing ship deliveries, having an open and effective dialogue with stakeholders was crucial. One key step in this process was clearly explaining the technical blueprint for the platform's implementation and showing how it would increase efficiency.
 
-From a technological perspective, the endeavor was executed with precision. Kotlin and the agile Micronaut framework formed the sturdy foundation upon which I meticulously constructed a ground-up application. This innovative solution was tailored to enhance communication channels between truckers and shipment managers, bridging gaps in the logistics process.
+On the tech side, we executed everything with precision. We built a robust application using Kotlin and the agile Micronaut framework. This innovative solution was designed to improve communication between truckers and shipment managers, addressing gaps in the logistics process.
 
-To bolster communication capabilities, seamless integration with Twilio was achieved, empowering the system to dispatch automated text messages as a vital tool in shipment coordination.
-Furthermore, the application was thoughtfully imbued with the power of Google My Maps. This integration empowered the shipment team to craft personalized maps, a feature instrumental in their daily operations. These custom maps could be effortlessly generated and displayed for each facility, delivering unparalleled convenience and enhancing overall operational efficiency. This holistic approach not only streamlined deliveries but also transformed the landscape of communication in the shipping industry.
+To further enhance communication, we seamlessly integrated Twilio, enabling the system to send automated text messages, a vital tool in coordinating shipments. Additionally, we incorporated Google My Maps, allowing the shipment team to create custom maps tailored to each facility. This feature greatly improved their daily operations by making generating and displaying personalized maps easy, leading to unparalleled convenience and better overall efficiency. This holistic approach not only streamlined deliveries but also revolutionized communication in the shipping industry.
 
