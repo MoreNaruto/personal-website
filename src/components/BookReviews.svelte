@@ -1,6 +1,7 @@
 <script>
     import { fade, slide } from 'svelte/transition';
     import { marked } from 'marked';
+    import { onMount } from 'svelte';
     import bookReviews from '../markdowns/bookReviews/*.md';
 
     let books = [
@@ -120,8 +121,41 @@
     ].reverse();
 
     let currentPage = 1;
-    const booksPerPage = 16;
+    let booksPerPage;
     let paginatedBooks = [];
+    let screenSize;
+
+    const breakpoints = {
+        xs: 8,
+        sm: 12,
+        lg: 16,
+        xl: 20
+    };
+
+    function updateBooksPerPage() {
+        const width = window.innerWidth;
+
+        if (width >= 1280) {
+            booksPerPage = breakpoints.xl;
+        } else if (width >= 900) {
+            booksPerPage = breakpoints.lg;
+        } else if (width >= 640) {
+            booksPerPage = breakpoints.sm;
+        } else {
+            booksPerPage = breakpoints.xs;
+        }
+        paginateBooks();
+    }
+
+    onMount(() => {
+        window.addEventListener('resize', updateBooksPerPage);
+        updateBooksPerPage();
+        paginateBooks();
+
+        return () => {
+            window.removeEventListener('resize', updateBooksPerPage);
+        };
+    });
 
     function paginateBooks() {
         const startIndex = (currentPage - 1) * booksPerPage;
@@ -142,8 +176,6 @@
             paginateBooks();
         }
     }
-
-    paginateBooks();
 
     let bookContent = '';
     let selectedBookIndex = null;
@@ -168,7 +200,7 @@
         <h1 class="text-center">My Personal Reviews</h1>
         <div class="mb-4">
             <div class="relative max-w-4xl mx-auto">
-                <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 gap-4 justify-center items-center" in:fade>
+                <div class="grid xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 justify-center items-center" in:fade>
                     {#each paginatedBooks as { title, author, image }, index}
                         <div class="border border-gray-300 rounded-lg p-4 cursor-pointer text-center min-h-full-available transform transition-transform duration-200 hover:scale-105 w-40" on:click={() => handleBookClick(index)}>
                             <div class="w-full h-full flex justify-center items-center">
