@@ -39,7 +39,7 @@
 </style>
 
 <div class="container mx-auto my-10">
-    <div class="relative w-full h-96 overflow-hidden bg-white shadow-lg rounded-lg">
+    <div class="relative w-full h-full overflow-y-auto overflow-x-hidden bg-white shadow-lg rounded-lg">
         <div class="page-turn flex w-full h-full transform" style="transform: translateX(-{currentPage * 100}%)">
             {#each content as page, index}
                 <div class="w-full flex-shrink-0 p-10 prose max-w-full {index === 0 ? 'first-page' : ''}">

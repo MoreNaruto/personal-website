@@ -37,7 +37,16 @@
     };
 </script>
 
+<style>
+    h1 {
+        font-size: revert;
+        font-weight: revert;
+        color: white;
+    }
+</style>
+
 <main class="flex flex-col items-center justify-center h-screen w-screen">
+    <h1>Roll the Dice!</h1>
     <Dice on:modalOpenClick={handleModalOpenClick}/>
     {#if showModal}
         <div class="fixed inset-0 h-screen bg-black bg-opacity-70 flex justify-center items-center z-10"
