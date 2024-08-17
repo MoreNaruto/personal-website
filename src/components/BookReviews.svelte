@@ -119,6 +119,7 @@
         { title: "Our Revolution", author: "Bernie Sanders", image: "https://github.com/MoreNaruto/personal-website/assets/2292947/bbc8c48a-f354-4ba6-94fa-be024eefe816" },
         { title: "Managing Humans: Biting and Humorous Tales of Software Engineering Manager", author: "Michael Lopp", image: "https://github.com/MoreNaruto/personal-website/assets/2292947/d141ada3-cf17-4d72-a60d-1cf2b82edb26" },
         { title: "Like, Comment, Subscribe: Inside YouTube’s Chaotic Rise to World Domination", author: "Mark Bergen", image: "https://github.com/user-attachments/assets/6fde64f7-0c9f-422c-89e2-21f8ffe5b0b4" },
+        { title: "Apollo’s Arrow: The Profound And Enduring Impact of Coronavirus on the Way We Live", author: "Nicholas A Christakis", image: "https://github.com/user-attachments/assets/4b428738-b251-4d06-9ce6-8a2aacb45ae1" },
     ].reverse();
 
     let currentPage = 1;
