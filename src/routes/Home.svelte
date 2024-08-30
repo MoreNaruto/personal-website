@@ -6,10 +6,11 @@
     import Contact from "../components/Contact.svelte";
     import Skills from "../components/skills/SkillsSet.svelte";
     import RandomWord from "../components/RandomWord.svelte";
-    import {fade} from 'svelte/transition';
+    import { fade } from 'svelte/transition';
 
     let showModal = false;
     let currentModalPage = AboutMe;
+    let diceRef;
 
     const pageComponentMap = new Map([
         ['about-me', AboutMe],
@@ -35,6 +36,10 @@
     const closeModal = () => {
         showModal = false;
     };
+
+    function rollDice() {
+        diceRef.rotateDice();
+    }
 </script>
 
 <style>
@@ -42,20 +47,21 @@
         font-size: revert;
         font-weight: revert;
         color: white;
+        cursor: pointer;
     }
 </style>
 
 <main class="flex flex-col items-center justify-center h-screen w-screen">
-    <h1>Roll the Dice!</h1>
-    <Dice on:modalOpenClick={handleModalOpenClick}/>
+    <button class="px-4 py-2 bg-blue-500 text-white xs:text-xl sm:text-2xl lg:text-3xl xl:text-4xl rounded" on:click={rollDice}>Roll the Die!</button>
+    <h6 class="xs:mb-2 sm:mb-4 lg:mb-8 xl:mb-16 mt-2 text-white">Or move it yourself</h6>
+    <Dice bind:this={diceRef} on:modalOpenClick={handleModalOpenClick}/>
     {#if showModal}
         <div class="fixed inset-0 h-screen bg-black bg-opacity-70 flex justify-center items-center z-10"
              in:fade out:fade on:click={handleBackdropClick}>
             <div class="relative bg-white rounded-md max-h-screen
                     {currentModalPage === Contact || currentModalPage === Career ? '' : 'w-screen'}
                     {currentModalPage === Career ?  '' : 'text-center max-w-4xl'}
-                    {currentModalPage === BookReviews ? 'overflow-auto' : 'overflow-hidden'}
-">
+                    {currentModalPage === BookReviews ? 'overflow-auto' : 'overflow-hidden'}">
                 <button class="absolute top-2 right-2 bg-transparent border-none text-2xl cursor-pointer"
                         on:click={closeModal}>&times;
                 </button>

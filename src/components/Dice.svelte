@@ -1,7 +1,5 @@
 <script>
-    import {onMount} from "svelte";
-    import {createEventDispatcher} from 'svelte';
-
+    import { onMount, createEventDispatcher } from "svelte";
     const dispatch = createEventDispatcher();
 
     let dice;
@@ -9,14 +7,17 @@
     let startX, startY, currentX, currentY;
     let rotationX = 0, rotationY = 0;
     let translateZValue = 'calc(40vw / 2)';
+    let rotating = false;
 
     const onMouseDown = (event) => {
+        if (rotating) return;
         isDragging = true;
         startX = getClientX(event);
         startY = getClientY(event);
     };
 
     const onTouchStart = (event) => {
+        if (rotating) return;
         const touch = event.touches[0];
         isDragging = true;
         startX = getClientX(touch);
@@ -24,7 +25,7 @@
     };
 
     const onMouseMove = (event) => {
-        if (!isDragging) return;
+        if (!isDragging || rotating) return;
         currentX = getClientX(event);
         currentY = getClientY(event);
 
@@ -41,7 +42,7 @@
     };
 
     const onTouchMove = (event) => {
-        if (!isDragging || event.touches.length !== 1) return;
+        if (!isDragging || rotating || event.touches.length !== 1) return;
         const touch = event.touches[0];
         currentX = getClientX(touch);
         currentY = getClientY(touch);
@@ -67,7 +68,7 @@
     };
 
     function handleButtonClick(page) {
-        dispatch('modalOpenClick', {page: page});
+        dispatch('modalOpenClick', { page });
     }
 
     function updateTranslateZ() {
@@ -85,6 +86,26 @@
         }
 
         translateZValue = `translateZ(calc(${size / 2}vw))`;
+    }
+
+    export const rotateDice = () => {
+        rotating = true;
+        const randomRotationX = Math.floor(Math.random() * 8) * 90;
+        const randomRotationY = Math.floor(Math.random() * 8) * 90;
+
+        const interval = setInterval(() => {
+            rotationX += 30;
+            rotationY += 30;
+            dice.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+        }, 50);
+
+        setTimeout(() => {
+            clearInterval(interval);
+            rotationX = randomRotationX;
+            rotationY = randomRotationY;
+            dice.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+            rotating = false;
+        }, 1000);
     }
 
     onMount(() => {
@@ -129,42 +150,42 @@
         <div class="face front absolute w-full h-full bg-red-200 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: {translateZValue}">
             <p class="mb-10">Who am I?</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("about-me")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("about-me")}>
                 Click Me
             </button>
         </div>
         <div class="face back absolute w-full h-full bg-amber-200 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: rotateY(180deg) {translateZValue}">
             <p class="mb-10">My Skills!</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("skills")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("skills")}>
                 Click Me
             </button>
         </div>
         <div class="face left absolute w-full h-full bg-lime-200 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: rotateY(-90deg) {translateZValue}">
             <p class="mb-10">Want to chat?</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("contact")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("contact")}>
                 Click Me
             </button>
         </div>
         <div class="face right absolute w-full h-full bg-teal-200 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: rotateY(90deg) {translateZValue}">
             <p class="mb-10">Learn a new word!</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("random-word")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("random-word")}>
                 Click Me
             </button>
         </div>
         <div class="face top absolute w-full h-full bg-indigo-200 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: rotateX(90deg) {translateZValue}">
             <p class="mb-10">Follow my career!</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("career")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("career")}>
                 Click Me
             </button>
         </div>
         <div class="face bottom absolute w-full h-full bg-yellow-400 border items-center justify-center text-center text-[3vw] xs:text-[10vw] font-bold"
              style="transform: rotateX(-90deg) {translateZValue}">
             <p class="mb-10">My Book Reviews!</p>
-            <button class="px-4 py-2 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("book-reviews")}>
+            <button class="px-4 bg-blue-500 text-white rounded" on:click={() => handleButtonClick("book-reviews")}>
                 Click Me
             </button>
         </div>
