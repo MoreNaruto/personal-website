@@ -124,7 +124,7 @@
         { title: "Savage Inequalities: Children in America’s Schools", author: "Jonathan Kozol", image: "https://github.com/user-attachments/assets/f58e42a5-593e-4d28-9246-955a71f5dc40" },
         { title: "As Gods: A Moral History of the Genetic Age", author: "Matthew Cobb", image: "https://github.com/user-attachments/assets/0498243f-581d-459b-99a0-a35cc91580af" },
         { title: "How the Mind Works", author: "Steven Pinker", image: "https://github.com/user-attachments/assets/320bb707-714d-4451-a035-85f38dc3efd7" },
-        { title: "Woke, Inc.: Inside Corporate America’s Social Justice Scam", author: "Vivek Ramaswamy", image: "https://github.com/user-attachments/assets/07920aa8-c4b9-4edb-af32-69fefefce691" }
+        { title: "Woke, Inc.: Inside Corporate America’s Social Justice Scam", author: "Vivek Ramaswamy", image: "https://github-production-user-asset-6210df.s3.amazonaws.com/2292947/431183548-07920aa8-c4b9-4edb-af32-69fefefce691.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250408%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250408T024238Z&X-Amz-Expires=300&X-Amz-Signature=04ca23f4847aef73667b02349d9e610192a0d9daa8bc48e4e30dfca0a8ff5f99&X-Amz-SignedHeaders=host" }
     ].reverse();
 
     let currentPage = 1;
