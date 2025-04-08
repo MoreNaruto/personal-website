@@ -123,7 +123,8 @@
         { title: "Debt: The First 5,000 Years", author: "David Graeber", image: "https://github.com/user-attachments/assets/3e638e66-1a6b-4824-a34c-cb5893310d6c" },
         { title: "Savage Inequalities: Children in America’s Schools", author: "Jonathan Kozol", image: "https://github.com/user-attachments/assets/f58e42a5-593e-4d28-9246-955a71f5dc40" },
         { title: "As Gods: A Moral History of the Genetic Age", author: "Matthew Cobb", image: "https://github.com/user-attachments/assets/0498243f-581d-459b-99a0-a35cc91580af" },
-        { title: "How the Mind Works", author: "Steven Pinker", image: "https://github.com/user-attachments/assets/320bb707-714d-4451-a035-85f38dc3efd7" }
+        { title: "How the Mind Works", author: "Steven Pinker", image: "https://github.com/user-attachments/assets/320bb707-714d-4451-a035-85f38dc3efd7" },
+        { title: "Woke, Inc.: Inside Corporate America’s Social Justice Scam", author: "Vivek Ramaswamy", image: "https://github.com/user-attachments/assets/07920aa8-c4b9-4edb-af32-69fefefce691" }
     ].reverse();
 
     let currentPage = 1;
