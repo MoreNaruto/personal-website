@@ -126,8 +126,8 @@
         { title: "How the Mind Works", author: "Steven Pinker", image: "https://github.com/user-attachments/assets/320bb707-714d-4451-a035-85f38dc3efd7" },
         { title: "Woke, Inc.: Inside Corporate America’s Social Justice Scam", author: "Vivek Ramaswamy", image: "https://i.imgur.com/fX5bOPB.jpeg" },
         { title: "Startup CXO: A Field Guide to Scaling Up Your Company’s Critical Functions and Teams", author: "Matt Blumberg", image: "https://i.imgur.com/ot5OLTX.jpeg" },
-        { title: "Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong", author: "James W. Loewen", image: "https://imgur.com/a/yeYy4LZ" },
-        { title: "Hardball: Are You Playing to Play or Playing to Win?", author: "George Stalk and Rob Lachenauer", image: "https://imgur.com/a/b56x5gT" }
+        { title: "Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong", author: "James W. Loewen", image: "https://i.imgur.com/kFMdXtR.jpeg" },
+        { title: "Hardball: Are You Playing to Play or Playing to Win?", author: "George Stalk and Rob Lachenauer", image: "https://i.imgur.com/8zh4coE.jpeg" }
     ].reverse();
 
     let currentPage = 1;
