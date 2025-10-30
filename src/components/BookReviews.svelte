@@ -127,7 +127,10 @@
         { title: "Woke, Inc.: Inside Corporate America’s Social Justice Scam", author: "Vivek Ramaswamy", image: "https://i.imgur.com/fX5bOPB.jpeg" },
         { title: "Startup CXO: A Field Guide to Scaling Up Your Company’s Critical Functions and Teams", author: "Matt Blumberg", image: "https://i.imgur.com/ot5OLTX.jpeg" },
         { title: "Lies My Teacher Told Me: Everything Your American History Textbook Got Wrong", author: "James W. Loewen", image: "https://i.imgur.com/kFMdXtR.jpeg" },
-        { title: "Hardball: Are You Playing to Play or Playing to Win?", author: "George Stalk and Rob Lachenauer", image: "https://i.imgur.com/8zh4coE.jpeg" }
+        { title: "Hardball: Are You Playing to Play or Playing to Win?", author: "George Stalk and Rob Lachenauer", image: "https://i.imgur.com/8zh4coE.jpeg" },
+        { title: "Artificial Intelligence: A Guide for Thinking Humans", author: "Melanie Mitchell", image: "https://i.imgur.com/yCnpDLn.jpeg" },
+        { title: "Poverty and the Myths of Health Care Reform", author: "Richard (Buz) Cooper, MD", image: "https://i.imgur.com/XHTXfiJ.jpeg" },
+        { title: "How the Word is Passed", author: "Clint Smith", image: "https://i.imgur.com/izcIC0f.jpeg" }
     ].reverse();
 
     let currentPage = 1;
