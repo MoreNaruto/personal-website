@@ -130,7 +130,11 @@
         { title: "Hardball: Are You Playing to Play or Playing to Win?", author: "George Stalk and Rob Lachenauer", image: "https://i.imgur.com/8zh4coE.jpeg" },
         { title: "Artificial Intelligence: A Guide for Thinking Humans", author: "Melanie Mitchell", image: "https://i.imgur.com/yCnpDLn.jpeg" },
         { title: "Poverty and the Myths of Health Care Reform", author: "Richard (Buz) Cooper, MD", image: "https://i.imgur.com/XHTXfiJ.jpeg" },
-        { title: "How the Word is Passed", author: "Clint Smith", image: "https://i.imgur.com/izcIC0f.jpeg" }
+        { title: "How the Word is Passed", author: "Clint Smith", image: "https://i.imgur.com/izcIC0f.jpeg" },
+        { title: "Working Effectively with Legacy Code", author: "Michael C. Feathers", image: "https://i.imgur.com/8KMRmey.jpeg" },
+        { title: "Plunder: Private Equity’s Plan to Pillage America", author: "Brendan Ballou", image: "https://i.imgur.com/NEqA7Jz.jpeg" },
+        { title: "Fire Your Boss: Discover Work You Love without Quitting your Job", author: "Aaron McHugh", image: "https://i.imgur.com/DxvnZZa.jpeg" },
+        { title: "The Need to be Whole: Patriotism and the History of Prejudice", author: "Wendell Berry", image: "https://i.imgur.com/qXeGFAx.jpeg" },
     ].reverse();
 
     let currentPage = 1;
